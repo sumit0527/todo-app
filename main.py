@@ -9,7 +9,10 @@ def fetch_todos():
     todos = get_todos(FILE)
 
     for todo in todos:
-        st.checkbox(todo)
+        if st.checkbox(todo):
+            todos.remove(todo)
+            write_todos(todos)
+            st.rerun()
 
 def add_todo():
     todos = get_todos()
