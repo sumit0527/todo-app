@@ -23,7 +23,18 @@ def add_todo():
     write_todos(todos)
 
 
+def clear_todos():
+    todos = get_todos()
+    todos.clear()
+    write_todos(todos)
+
+
 fetch_todos()
+
+# clear all existing todos 
+st.sidebar.markdown("#### Click below to remove all todos:")
+if st.sidebar.button(label="Clear Todos", on_click=clear_todos):
+    st.sidebar.success("Todos removed successfully!")
 
 st.text_input(label="Enter Todo:", placeholder="Enter new todo here...", key="new_todo")
 
