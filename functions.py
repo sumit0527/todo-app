@@ -1,4 +1,4 @@
-FILE = r"TODO-APP\\todos.txt"
+FILE = r"D:\Python Projects\My Own Projects\TODO-APP\todos.txt"
 
 
 def get_todos(FILE_PATH=FILE):
@@ -12,10 +12,3 @@ def write_todos(todos, FILE_PATH=FILE):
     """write todos to todos.txt file"""
     with open(FILE_PATH, "w") as f:
         f.writelines(todos)
-
-
-x = get_todos()
-x.append("learning git")
-write_todos(x)
-
-print(x)
