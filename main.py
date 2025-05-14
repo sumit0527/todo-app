@@ -2,15 +2,14 @@ import streamlit as st
 import os
 from functions import get_todos, write_todos
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-FILEPATH = os.path.join(SCRIPT_DIR, "todos.txt")
+FILEPATH = r'Python Projects\My Own Projects\TODO-APP\\todos.txt'
 
 st.title("📝 Todo App")
 st.subheader("This app will increase your productivity!")
 
 
 def fetch_todos():
-    todos = get_todos(FILEPATH)
+    todos = get_todos()
 
     for key, todo in enumerate(todos, start=1):
         if st.checkbox(todo, key=key):
@@ -20,7 +19,7 @@ def fetch_todos():
 
 
 def add_todo():
-    todos = get_todos(FILEPATH)
+    todos = get_todos()
     todo = st.session_state["new_todo"]
     st.session_state["new_todo"] = ""
     todos.append(todo + "\n")
@@ -28,7 +27,7 @@ def add_todo():
 
 
 def clear_todos():
-    todos = get_todos(FILEPATH)
+    todos = get_todos()
     todos.clear()
     write_todos(todos)
 
