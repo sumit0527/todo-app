@@ -1,6 +1,6 @@
 import os
 
-FILEPATH = r"../TODO-APP/todos.txt"
+FILEPATH = os.path.join("data", "todos.txt")
 
 
 def get_todos(FILE=FILEPATH):
