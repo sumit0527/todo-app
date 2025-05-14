@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from functions import get_todos, write_todos
 
-FILEPATH = r'Python Projects\My Own Projects\TODO-APP\\todos.txt'
+FILEPATH = os.path.join("data", "todos.txt")
 
 st.title("📝 Todo App")
 st.subheader("This app will increase your productivity!")
