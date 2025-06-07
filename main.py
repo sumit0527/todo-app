@@ -4,6 +4,9 @@ from functions import get_todos, write_todos
 
 FILEPATH = os.path.join("data", "todos.txt")
 
+# app launch startup animation
+st.balloons()
+
 st.title("📝 Todo App")
 st.subheader("This app will increase your productivity!")
 
