@@ -7,6 +7,9 @@ FILEPATH = os.path.join("data", "todos.txt")
 st.title("📝 Todo App")
 st.subheader("This app will increase your productivity!")
 
+# adding welcome notification 
+st.toast("Welcome to our Todo App 😊")
+
 
 def fetch_todos():
     todos = get_todos()
