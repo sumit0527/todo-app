@@ -13,7 +13,9 @@ st.title("📝 Todo App")
 st.subheader("This app will increase your productivity!")
 
 # adding welcome notification 
-st.toast("Welcome to our Todo App 😊")
+if "welcome_notify" not in st.session_state:
+    st.toast("Welcome to our Todo App 😊")
+    st.session_state['welcome_notify'] = True
 
 
 def fetch_todos():
