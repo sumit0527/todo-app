@@ -5,7 +5,9 @@ from functions import get_todos, write_todos
 FILEPATH = os.path.join("data", "todos.txt")
 
 # app launch startup animation
-st.balloons()
+if "balloon_shown" not in st.session_state:
+    st.balloons()
+    st.session_state['balloon_shown'] = True
 
 st.title("📝 Todo App")
 st.subheader("This app will increase your productivity!")
